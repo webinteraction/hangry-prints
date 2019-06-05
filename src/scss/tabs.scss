@@ -20,9 +20,17 @@
       font-size: 30px;
       padding: 10px 15px 5px;
       text-decoration: none;
+      transition: background-color .3s ease, margin-top .3s ease, padding .3s ease;
 
       &[aria-expanded='true'] {
         background-color: $primary;
+        margin-top: -6px;
+        padding: 13px 15px 8px;
+
+        span {
+          animation: shake-n-bake .4s ease;
+          display: inline-block;
+        }
       }
     }
   }
