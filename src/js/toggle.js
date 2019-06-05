@@ -6,6 +6,9 @@ export class Toggle {
       attr: 'data-toggle',
       toggleContainer: '.toggle',
       toggleClass: 'active',
+      single: false,
+      singleContainer: undefined,
+      expandOnly: false,
       onToggle: (btn, target, isToggled) => {},
     }, options)
 
@@ -38,11 +41,29 @@ export class Toggle {
     // Get the toggle target
     const target = btn.closest(this.config.toggleContainer).querySelector(btn.getAttribute(this.config.attr))
 
+    // Is toggled?
+    const isToggled = !target.classList.contains(this.config.toggleClass)
+
+    // Expand only
+    if (this.config.expandOnly && !isToggled && !this.collapsingSingleSiblings) return
+
     // Toggle the target
     target.classList.toggle(this.config.toggleClass)
 
-    // Is toggled?
-    const isToggled = target.classList.contains(this.config.toggleClass)
+    // Collapse siblings if possible
+    if (isToggled && this.config.single) {
+      // Get single container
+      let singleContainer = document
+      if (this.config.singleContainer) singleContainer = btn.closest(this.config.singleContainer)
+
+      // Collapse siblings within single container
+      singleContainer.querySelectorAll(`[${this.config.attr}][aria-expanded="true"]`)
+        .forEach(activeBtn => {
+          this.collapsingSingleSiblings = true
+          activeBtn.click()
+          this.collapsingSingleSiblings = false
+        })
+    }
 
     // Set button [aria-expanded]
     btn.setAttribute('aria-expanded', isToggled)

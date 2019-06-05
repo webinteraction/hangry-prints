@@ -47,13 +47,13 @@
       <div class="tabs">
         <!-- Tabs navigation -->
         <ul class="tabs-nav">
-          <li><a href="#dogs"><span>🌭</span></a></li>
-          <li><a href="#burgers"><span>🍔</span></a></li>
-          <li><a href="#veggies"><span>🥦</span></a></li>
+          <li><a href="#dogs" data-tab="#dogs" aria-expanded="true"><span>🌭</span></a></li>
+          <li><a href="#burgers" data-tab="#burgers" aria-expanded="false"><span>🍔</span></a></li>
+          <li><a href="#veggies" data-tab="#veggies" aria-expanded="false"><span>🥦</span></a></li>
         </ul>
 
         <!-- Hot dogs -->
-        <div id="dogs" class="tab-panel">
+        <div id="dogs" class="tab-panel active">
           <div class="product">
             <article class="detail">
               <h2>Print-a-Dog</h2>
@@ -161,6 +161,24 @@
         </div>
       </div>
 
+      <!-- Breakfast tabs -->
+      <div class="tabs">
+        <!-- Tabs navigation -->
+        <ul class="tabs-nav">
+          <li><a href="#bacon" data-tab="#bacon" aria-expanded="true"><span>🥓</span></a></li>
+          <li><a href="#eggs" data-tab="#eggs" aria-expanded="false"><span>🍳</span></a></li>
+        </ul>
+
+        <!-- Bacon -->
+        <div id="bacon" class="tab-panel active">
+          <p>Bacon!</p>
+        </div>
+
+        <!-- Eggs -->
+        <div id="eggs" class="tab-panel">
+          <p>Eggs!</p>
+        </div>
+      </div>
     </main>
 
   </div>
