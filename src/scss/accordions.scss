@@ -1,32 +1,42 @@
 // Accordions
 .accordion {
+  border-top: 1px solid $lighter;
   margin-top: 20px;
 }
 
 // Accordion headers
 .accordion-header {
   font-size: 1em;
+  margin: 0;
 
   a {
+    border: 1px solid $lighter;
+    border-top: 0;
     display: flex;
     justify-content: space-between;
-    padding: 5px 0;
+    padding: 10px 15px;
     text-decoration: none;
-  }
 
-  .accordion-question {
-    text-decoration: underline;
-    text-decoration-color: $primary;
+    &[aria-expanded='true'] {
+      color: $primary;
+
+      .accordion-icon {
+        transform: rotate(45deg);
+      }
+    }
   }
 
   .accordion-icon {
     color: $medium;
+    transition: transform .3s ease;
   }
 }
 
 // Accordion panels
 .accordion-panel {
-  padding-bottom: 25px;
+  border: 1px solid $lighter;
+  border-top: 0;
+  padding: 15px 10px 25px;
 
   p {
     margin: 0;

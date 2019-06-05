@@ -1,0 +1,20 @@
+// Grow in
+@keyframes grow-in {
+  0% {
+    max-height: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  100% {
+    max-height: 150px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    padding-top: 15px;
+  }
+}
+
+.grow-in {
+  animation: grow-in .3s ease;
+}
