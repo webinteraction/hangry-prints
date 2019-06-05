@@ -53,9 +53,34 @@
   .line {
     border-top: 2px solid $lightest;
     display: block;
+    transition: transform .3s cubic-bezier(.77, .18, .03, 1.7);
+
+    &:nth-child(1) {
+      transform-origin: 0 100%;
+    }
+
+    &:nth-child(3) {
+      transform-origin: 0 0;
+    }
 
     + .line {
       margin-top: 8px;
+    }
+  }
+
+  [aria-expanded='true'] & {
+    .line {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(2px, -2px);
+      }
+
+      &:nth-child(2) {
+        transform: scaleX(0);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(2px, 2px);
+      }
     }
   }
 }

@@ -36,3 +36,18 @@
     transform: rotate(-6deg);
   }
 }
+
+// Slide in
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slide-in .3s ease;
+}
