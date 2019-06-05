@@ -11,3 +11,9 @@ const tabs = new Toggle({
   singleContainer: '.tabs',
   expandOnly: true,
 })
+
+// Accordions
+const accordions = new Toggle({
+  attr: 'data-accordion',
+  toggleContainer: '.accordion',
+})

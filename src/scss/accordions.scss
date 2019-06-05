@@ -31,4 +31,8 @@
   p {
     margin: 0;
   }
+
+  &:not(.active) {
+    display: none;
+  }
 }
