@@ -18,3 +18,21 @@
 .grow-in {
   animation: grow-in .3s ease;
 }
+
+// Shake n' bake
+@keyframes shake-n-bake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  20%,
+  60% {
+    transform: rotate(6deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(-6deg);
+  }
+}
